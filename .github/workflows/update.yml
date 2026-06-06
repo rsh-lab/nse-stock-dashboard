@@ -2,8 +2,7 @@ name: Update Stock Data
 
 on:
   schedule:
-    - cron: '0 * * * *'   # Daily at 04:00 UTC
-
+    - cron: '*/5 * * * *'   
   workflow_dispatch:
 
 permissions:
