@@ -15,11 +15,11 @@ for symbol in tickers["Symbol"]:
         rows.append({
             "Symbol": symbol,
             "Price": info.get("currentPrice"),
-            "MarketCap": info.get("marketCap"),
+           "Market Cap (₹ Cr)": round( info.get("marketCap") / 1e7, 0 ) if info.get("marketCap") is not None else None,
             "PE": info.get("trailingPE"),
             "ForwardPE": info.get("forwardPE"),
             "PB": info.get("priceToBook"),
-            "ROE": info.get("returnOnEquity"),
+             "ROE (%)": round( info.get("returnOnEquity") * 100, 2 ) if info.get("returnOnEquity") is not None else None,
             "DebtToEquity": info.get("debtToEquity"),
             "DividendYield": info.get("dividendYield"),
             "RevenueGrowth": info.get("revenueGrowth"),
